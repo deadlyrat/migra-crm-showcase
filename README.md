@@ -92,7 +92,9 @@ MigraCRM corre en un **VPS bare-metal con AlmaLinux** con:
 
 ## Capturas de Pantalla
 
-> Capturas disponibles bajo solicitud — contactar para demo.
+<img src="assets/login.jpeg" width="100%" alt="Pagina de inicio de sesion de MigraCRM" />
+
+<img src="assets/preview.jpeg" width="100%" alt="Centro de Llamadas — registros CDR y transcriptor IA en vivo" />
 
 ---
 

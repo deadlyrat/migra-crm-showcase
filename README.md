@@ -1,35 +1,99 @@
+<div align="center">
+
+<img src="assets/banner.gif" width="100%" alt="MigraCRM, CRM para call centers de firmas de inmigración">
+
 # MigraCRM
 
-![Privado](https://img.shields.io/badge/Codigo-Privado%20%C2%B7%20Proyecto%20Cliente-red?style=flat)
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" width="18" align="absmiddle" /> ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
-<img src="https://cdn.simpleicons.org/fastapi" width="18" align="absmiddle" /> ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi&logoColor=white)
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" width="18" align="absmiddle" /> ![React](https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black)
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" width="18" align="absmiddle" /> ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" width="18" align="absmiddle" /> ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat&logo=postgresql&logoColor=white)
+![Privado](https://img.shields.io/badge/C%C3%B3digo-Privado%20%C2%B7%20Proyecto%20Cliente-red?style=flat)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi&logoColor=white)
+![React](https://img.shields.io/badge/React%2018-61DAFB?style=flat&logo=react&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=flat&logo=tailwindcss&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat&logo=postgresql&logoColor=white)
 ![Google Gemini](https://img.shields.io/badge/Gemini-8E75B2?style=flat&logo=google&logoColor=white)
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" width="18" align="absmiddle" /> ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
 
-> **Plataforma CRM full-stack para call centers de firmas de inmigracion — con transcripcion automatica de llamadas, analisis de sentimiento y automatizacion con IA.**
+**Plataforma CRM full-stack para una oficina de inmigración, con transcripción automática de llamadas del PBX, resúmenes con IA, análisis de sentimiento y seguimiento de casos EOIR e ICE.**
 
-> Este es un **portfolio showcase** — el codigo fuente es propietario y no esta incluido. Este README documenta la arquitectura y capacidades del sistema.
+</div>
+
+> Este es un **portafolio showcase**: el código fuente es propietario y no está incluido. Este README documenta la arquitectura y las capacidades del sistema.
+
+---
+
+## Contenido
+
+- [El Problema](#el-problema)
+- [La Solución](#la-solución)
+- [Funcionalidades](#funcionalidades)
+- [Vista Previa](#vista-previa)
+- [Arquitectura](#arquitectura)
+- [Stack Tecnológico](#stack-tecnológico)
+- [Instalación local](#instalación-local)
+- [Roadmap](#roadmap)
+- [Contacto](#contacto)
 
 ---
 
 ## El Problema
 
-Las firmas de inmigracion que dependen de call centers enfrentaban:
+Las firmas de inmigración que dependen de call centers enfrentaban:
 
-- Sin registro automatico de llamadas — los agentes tomaban notas manualmente, perdiendo detalles criticos
-- Sin historial de llamadas a mano — habia que buscar en planillas para reconocer a clientes recurrentes
-- Sin resumenes con IA — supervisores no podian revisar rapidamente la calidad o resultado de las llamadas
-- Sin seguimiento de sentimiento — sin visibilidad sobre frustracion o satisfaccion del cliente
-- Telefonia desconectada — el PBX (Grandstream UCM) no tenia integracion con ningun CRM
+- Sin registro automático de llamadas: los agentes tomaban notas a mano y se perdían detalles críticos.
+- Sin historial a la mano: había que buscar en planillas para reconocer a los clientes recurrentes.
+- Sin resúmenes con IA: los supervisores no podían revisar con rapidez la calidad o el resultado de las llamadas.
+- Sin seguimiento del sentimiento: no había visibilidad sobre la frustración o la satisfacción del cliente.
+- Telefonía desconectada: el PBX (Grandstream UCM) no tenía integración con ningún CRM.
 
 ---
 
-## La Solucion
+## La Solución
 
-MigraCRM es un CRM construido a medida que se conecta directamente al PBX, transcribe automaticamente cada llamada, genera resumenes con IA y brinda a los agentes una vista 360° de cada cliente sin ningun ingreso manual de datos.
+MigraCRM es un CRM construido a medida que se conecta directamente al PBX, transcribe cada llamada, genera resúmenes con IA y le da al agente una vista completa de cada cliente sin ingreso manual de datos. Además centraliza clientes, casos, cobros y el seguimiento de detenidos y casos EOIR/ICE.
+
+---
+
+## Funcionalidades
+
+| Funcionalidad | Descripción |
+|---------------|-------------|
+| Transcripción automática | Cada llamada se transcribe con faster-whisper (inferencia local, sin API externa) |
+| Resúmenes con IA | Google Gemini genera un resumen conciso y acciones sugeridas por llamada |
+| Análisis de sentimiento | El tono emocional del cliente se clasifica por llamada y se sigue en el tiempo |
+| Registros CDR | Registros de detalle de llamada extraídos directamente del PBX |
+| Historial del cliente | Interacciones por cliente: llamadas anteriores, resúmenes y notas |
+| Notas del agente | Notas estructuradas y tareas de seguimiento |
+| Estado del transcriptor en vivo | Indicador del avance de la transcripción de llamadas pendientes |
+| Casos EOIR e ICE | Agentes locales consultan EOIR/ICE y reportan al backend del CRM |
+| Cobros y detenidos | Módulos de cobros y de seguimiento de detenidos |
+| Bot Hermes | Asistente en Telegram (Ollama) para consultas rápidas sobre datos de clientes |
+
+---
+
+## Vista Previa
+
+<table>
+  <tr>
+    <td width="50%">
+      <img src="assets/cards/01-llamadas-con-ia.png" width="100%" alt="Llamadas con IA: transcripción del PBX con resumen y análisis de sentimiento">
+      <br><b>Llamadas con IA</b>: transcripción de llamadas del PBX con resumen y análisis de sentimiento.
+    </td>
+    <td width="50%">
+      <img src="assets/cards/02-clientes-y-casos.png" width="100%" alt="Clientes y casos: historial por cliente, notas del agente y seguimiento de casos">
+      <br><b>Clientes y casos</b>: historial completo por cliente, notas del agente y seguimiento de casos.
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <img src="assets/cards/03-casos-eoir-e-ice.png" width="100%" alt="Casos EOIR e ICE: agentes locales que consultan EOIR e ICE y reportan al backend">
+      <br><b>Casos EOIR e ICE</b>: agentes locales consultan EOIR/ICE y reportan al backend del CRM.
+    </td>
+    <td width="50%"></td>
+  </tr>
+</table>
+
+> Las capturas reales contienen datos de clientes, por eso este showcase solo muestra tarjetas ilustrativas.
 
 ---
 
@@ -37,73 +101,70 @@ MigraCRM es un CRM construido a medida que se conecta directamente al PBX, trans
 
 ```mermaid
 graph LR
-    PBX["Grandstream UCM6304\nPBX"] -->|CDR + API de Grabaciones| BE
+    PBX["Grandstream UCM<br/>PBX"] -->|"CDR y grabaciones"| BE
 
-    subgraph BE ["Backend — Python · FastAPI"]
-        W["faster-whisper\nTranscripcion local STT"]
-        G["Google Gemini 2.5 Flash\nResumenes + Sentimiento"]
-        DB[("PostgreSQL\nRegistros + historial")]
-        BOT["Hermes Bot\nTelegram · Ollama · llama3.2"]
+    subgraph BE ["Backend: Python · FastAPI"]
+        W["faster-whisper<br/>Transcripción local"]
+        G["Google Gemini<br/>Resúmenes y sentimiento"]
+        DB[("PostgreSQL<br/>Registros e historial")]
+        BOT["Bot Hermes<br/>Telegram · Ollama"]
     end
 
-    BE --> FE["Frontend\nReact 18 · TypeScript · Vite · Tailwind"]
-    FE --> EXT["Callio Wave Add-in\nExtension del navegador"]
+    AG["Agentes locales<br/>EOIR · ICE"] -->|"Reportan casos"| BE
+    BE --> FE["Frontend<br/>React 18 · TypeScript · Vite · Tailwind"]
 ```
 
 ---
 
-## Funcionalidades
+## Stack Tecnológico
 
-| Funcionalidad | Descripcion |
-|--------------|-------------|
-| Transcripcion automatica | Cada llamada se transcribe con faster-whisper (inferencia local, sin API externa) |
-| Resumenes con IA | Google Gemini 2.5 Flash genera resumen conciso y acciones sugeridas por llamada |
-| Analisis de sentimiento | El tono emocional del cliente se clasifica por llamada y se rastrea en el tiempo |
-| Registros CDR | Registros completos de detalle de llamada extraidos directamente del PBX |
-| Historial del cliente | Historial completo de interacciones por cliente — llamadas anteriores, resumenes, notas |
-| Notas del agente | Los agentes pueden agregar notas estructuradas y tareas de seguimiento |
-| Estado del transcriptor en vivo | Indicador en tiempo real de cuando una llamada esta siendo transcrita |
-| Bot Hermes | Asistente IA en Telegram (Ollama llama3.2) para consultas rapidas sobre datos de clientes |
-
----
-
-## Stack Tecnologico
-
-| Capa | Tecnologia |
+| Capa | Tecnología |
 |------|-----------|
-| Backend | Python 3.12 · FastAPI · SQLAlchemy · SQLModel |
-| IA / Voz | Google Gemini 2.5 Flash · faster-whisper (Whisper local) |
-| Telefonia | Grandstream UCM6304 · CDR API · Recording API |
+| Backend | Python · FastAPI · SQLAlchemy |
+| IA / Voz | Google Gemini · faster-whisper (Whisper local) |
+| Telefonía | Grandstream UCM · CDR y grabaciones |
 | Frontend | React 18 · TypeScript · Vite · Tailwind CSS |
 | Base de datos | PostgreSQL |
-| Bot | Telegram Bot API · Ollama · llama3.2 |
-| Despliegue | VPS AlmaLinux bare-metal · PM2 · Nginx |
+| Bot | Telegram · Ollama |
+| Despliegue | VPS Linux · PM2 · Nginx |
 
 ---
 
-## Despliegue
+## Instalación local
 
-MigraCRM corre en un **VPS bare-metal con AlmaLinux** con:
-- **PM2** gestionando el backend FastAPI y el bot de Telegram como procesos persistentes
-- **Nginx** como reverse proxy sirviendo el frontend React y redirigiendo solicitudes a la API
-- **Callio Wave Add-in** instalado en los navegadores de los agentes para mostrar resumenes en tiempo real
+> **Aviso:** el código es privado y propietario. Estos pasos son solo para colaboradores autorizados con acceso al repositorio.
+
+1. Instala Python y Node.js.
+2. Backend: instala las dependencias de `server_vps/requirements.txt` y configura tus propias variables de entorno.
+3. Frontend:
+   ```bash
+   cd crm_frontend
+   npm install
+   npm run dev
+   ```
+4. Pruebas del backend: `python -m pytest` desde la raíz del proyecto.
 
 ---
 
-## Capturas de Pantalla
+## Roadmap
 
-<img src="assets/login.jpeg" width="100%" alt="Pagina de inicio de sesion de MigraCRM" />
-
-<img src="assets/preview.jpeg" width="100%" alt="Centro de Llamadas — registros CDR y transcriptor IA en vivo" />
+- [ ] Sumar capturas reales anonimizadas del sistema.
+- [ ] Ampliar el análisis de sentimiento con tendencias por agente.
 
 ---
 
 ## Contacto
 
-El codigo fuente es propietario. Para consultas sobre un sistema similar para tu empresa:
+El código fuente es propietario. Para consultas sobre un sistema similar para tu empresa, escríbeme:
 
-[pablozam1931@gmail.com](mailto:pablozam1931@gmail.com)
+[![Email](https://img.shields.io/badge/Email-pablozam1931%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:pablozam1931@gmail.com)
+[![WhatsApp](https://img.shields.io/badge/WhatsApp-(507)%206517--1870-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/50765171870)
+[![GitHub](https://img.shields.io/badge/GitHub-deadlyrat-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/deadlyrat)
+
+- Correo: [pablozam1931@gmail.com](mailto:pablozam1931@gmail.com)
+- WhatsApp: [(507) 6517-1870](https://wa.me/50765171870)
+- GitHub: [github.com/deadlyrat](https://github.com/deadlyrat)
 
 ---
 
-*Parte del portfolio [deadlyrat](https://github.com/deadlyrat) — ver tambien [Callio Wave Add-in](https://github.com/deadlyrat/callio-wave-showcase).*
+*Parte del portafolio de [deadlyrat](https://github.com/deadlyrat)*
